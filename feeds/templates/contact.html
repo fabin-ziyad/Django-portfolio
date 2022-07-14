@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>F A B I N &nbsp; Z I Y A D</title>
+    <link rel="icon" href="{% static 'images/logo-icon.png' %}">
+    <link rel="icon" href="/Assets/img/15.jpg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'icofont/icofont.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'aos/aos.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="preload" href="{% static 'images/fonts/Agustina.21f233e1.woff' %}" as="font" type="font/woff" crossorigin="">
+    <script src="https://use.fontawesome.com/66c3c19309.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.3/dist/ionicons/ionicons.js"></script>
+    <!-- links -->
+</head>
+<body>
+    <header id="header" class="fixed-top ">
+        <div class="container-fluid  navbur">
+
+            <div class="navi">
+                <div class="col-xl-9 d-flex align-items-center lefty">
+                    <h1 class="logo mr-auto"><a href="{% url 'main:main_home' %}">Fabin Ziyad</a></h1>
+
+        <nav class="nav-menu d-none d-lg-block float-right">
+            <ul>
+                <li><a href="{% url 'main:main_home' %}">Home</a></li>
+                <li><a href="{% url 'main:portfolio' %}">My Works</a></li>
+                <li class="active"><a href="{% url 'main:contact' %}">Contact</a></li>
+                <!-- <div class="invert pl-4 " id="theme-button">
+                    <ion-icon name='contrast-outline' style="color:White"></ion-icon>
+                </div> -->
+                <!--  -->
+
+           
+            </ul>
+        </nav>
+    </div>
+</div>
+</div>
+
+</header>
+<!--Section: Contact v.2-->
+
+<section class="p-3 mt-3">
+    
+<div class="containerSet">
+    <form method="POST">
+      <fieldset>
+        {% csrf_token %}
+        <div class="fontheading">
+        <legend>CONTACT ME</legend>
+        </div>
+        <div class="form-group">
+            <label class="labels">Full Name</label><br>
+            {{ form.Full_Name }}
+        </div>
+        <div class="form-group">
+            <label class="labels">Email</label><br>
+            {{ form.Email }}
+        </div>
+        <div class="form-group">
+            <label class="labels">Subject</label><br>
+            {{ form.Subject }}
+        </div>
+        <div class="form-group">
+            <label class="labels">Message</label><br>
+            {{ form.Messages }}
+        </div>
+        <div class="text-center mt-2">
+        <button type="submit" class="btn btn-primary ">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+</div>
+</section>
+<footer id="contact">
+    <div class="container">
+    
+            <div class="footing ">
+                <div class="row justify-content-center ">
+                    <div class="col-md-4 ">
+                        <p>Designed By Fabin Ziyad</p>
+                        <p>A Full Web Developer</p>
+                        <p id="copy ">© COPYRIGHTS FABIN ZIYAD. ALL RIGHTS RESERVED.
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="up-arrow ">
+        <div class="arrow ">
+            <a href="# "><i class="fa fa-angle-up "></i>
+        </a>
+        </div>
+    </div>
+
+</footer>
+
+<div id="preloader"></div>
+
+<script src="{% static 'jquery/jquery.min.js' %}"></script>
+
+<!-- <script src="{% static 'isotope-layout/isotope.pkgd.min.js' %}'"></script> -->
+<script src="{% static 'aos/aos.js' %}"></script> 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+<script src="{% static 'jquery.easing/jquery.easing.min.js' %}"></script>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+      } else {
+        document.getElementById("header").style.top = "-82px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
