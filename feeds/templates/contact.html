@@ -29,66 +29,66 @@
 <body>
     <header id="header" class="fixed-top ">
         <div class="container-fluid  navbur">
-
             <div class="navi">
                 <div class="col-xl-9 d-flex align-items-center lefty">
-                    <h1 class="logo mr-auto"><a href="{% url 'main:main_home' %}">Fabin Ziyad</a></h1>
-
-        <nav class="nav-menu d-none d-lg-block float-right">
-            <ul>
-                <li><a href="{% url 'main:main_home' %}">Home</a></li>
-                <li><a href="{% url 'main:portfolio' %}">My Works</a></li>
-                <li class="active"><a href="{% url 'main:contact' %}">Contact</a></li>
-                <!-- <div class="invert pl-4 " id="theme-button">
-                    <ion-icon name='contrast-outline' style="color:White"></ion-icon>
-                </div> -->
-                <!--  -->
-
-           
-            </ul>
-        </nav>
-    </div>
-</div>
-</div>
-
-</header>
+                      <h1 class="logo mr-auto"><a href="{% url 'main:main_home' %}">Fabin Ziyad</a></h1>
+                    <nav class="nav-menu d-none d-lg-block float-right">
+                       <ul>
+                        <li><a href="{% url 'main:main_home' %}">Home</a></li>
+                        <li><a href="{% url 'main:portfolio' %}">My Works</a></li>
+                        <li class="active"><a href="{% url 'main:contact' %}">Contact</a></li>
+                       </ul>
+                    </nav>
+                        <div class="invert pl-4 " id="theme-button">
+                            <ion-icon name='contrast-outline'  class="icon-dark"></ion-icon>
+                        </div> 
+                        <button type="button" class="mobile-nav-toggle d-lg-none">
+                          <i class="icofont-navigation-menu mt-2"></i>
+                        </button> 
+                        {% comment %} <div class="changed mx-3"><i class="icofont-ui-brightness change-theme" id="theme-button"></i></div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </header>
 <!--Section: Contact v.2-->
+    <!--====="Header section Ends"=====-->
+    
+    <!--====="Contact form section"=====-->
+    <section class="p-3 mt-3">  
+        <div class="containerSet">
+           <form method="POST">
+            <fieldset>
+               {% csrf_token %}
+                <div class="fontheading">
+                   <legend>CONTACT ME</legend>
+                </div>
+                <div class="form-group">
+                    <label class="labels">Full Name</label><br>
+                    {{ form.Full_Name }}
+                </div>
+                <div class="form-group">
+                    <label class="labels">Email</label><br>
+                    {{ form.Email }}
+                </div>
+                <div class="form-group">
+                    <label class="labels">Subject</label><br>
+                    {{ form.Subject }}
+                </div>
+                <div class="form-group">
+                    <label class="labels">Message</label><br>
+                    {{ form.Messages }}
+                </div>
+                <div class="text-center mt-2">
+                    <button type="submit" class="btn btn-primary ">Submit</button>
+                </div>
+            </fieldset>
+           </form>
+        </div>
+    </section>
+    <!--====="Contact form section Ends"=====-->
 
-<section class="p-3 mt-3">
-    
-<div class="containerSet">
-    <form method="POST">
-      <fieldset>
-        {% csrf_token %}
-        <div class="fontheading">
-        <legend>CONTACT ME</legend>
-        </div>
-        <div class="form-group">
-            <label class="labels">Full Name</label><br>
-            {{ form.Full_Name }}
-        </div>
-        <div class="form-group">
-            <label class="labels">Email</label><br>
-            {{ form.Email }}
-        </div>
-        <div class="form-group">
-            <label class="labels">Subject</label><br>
-            {{ form.Subject }}
-        </div>
-        <div class="form-group">
-            <label class="labels">Message</label><br>
-            {{ form.Messages }}
-        </div>
-        <div class="text-center mt-2">
-        <button type="submit" class="btn btn-primary ">Submit</button>
-        </div>
-      </fieldset>
-    </form>
-</div>
-</section>
-<footer id="contact">
-    <div class="container">
-    
+    <footer id="contact">
+        <div class="container">
             <div class="footing ">
                 <div class="row justify-content-center ">
                     <div class="col-md-4 ">
@@ -109,19 +109,15 @@
     </div>
 
 </footer>
+<!--====="Footer section Ends"=====-->
 
 <div id="preloader"></div>
-
 <script src="{% static 'jquery/jquery.min.js' %}"></script>
-
 <!-- <script src="{% static 'isotope-layout/isotope.pkgd.min.js' %}'"></script> -->
 <script src="{% static 'aos/aos.js' %}"></script> 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="{% static 'js/main.js' %}"></script>
-
 <script src="{% static 'jquery.easing/jquery.easing.min.js' %}"></script>
-
 <script>
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
@@ -133,11 +129,9 @@
       }
       prevScrollpos = currentScrollPos;
     }
-  </script>
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </body>
-
 </html>

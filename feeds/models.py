@@ -1,5 +1,9 @@
+#
 from django.db import models
+#
 from ckeditor.fields import RichTextField
+#######################################################################################################
+# PERSONAL INFO MODEL
 
 
 class PersonalInformation(models.Model):
@@ -10,19 +14,21 @@ class PersonalInformation(models.Model):
     phone = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(max_length=255, blank=True, null=True)
     # avatar=models.ImageField(upload_to='main_home')
-
     cv = models.FileField(upload_to='cv', blank=True, null=True)
-
     # Social Network
     github = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)
     facebook = models.URLField(blank=True, null=True)
-    twitter = models.URLField(blank=True, null=True)
+    whatsapp = models.URLField(blank=True, null=True)
     instagram = models.URLField(blank=True, null=True)
     mycv = models.URLField(blank=True, null=True)
+    my_pic = models.ImageField(upload_to='main_home')
 
     def __str__(self):
         return self.name_complete
+
+#######################################################################################################
+# ABOUT MODEL
 
 
 class About(models.Model):
@@ -34,6 +40,9 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
+#######################################################################################################
+# RECENT WORK MODEL
+
 
 class RecentWork(models.Model):
     title = models.CharField(max_length=50, blank=True, null=True)
@@ -44,31 +53,42 @@ class RecentWork(models.Model):
     def __str__(self):
         return self.title
 
-class Skills(models.Model):
-    skill = models.CharField(max_length=50, blank=True, null=True)
-    num = models.IntegerField(blank=True, null=True)
+#######################################################################################################
+# SKILL LANGUGES MODEL
+
+
+class Skill_Language(models.Model):
+    logos = models.ImageField(upload_to='main_home')
+    logo_name = models.CharField(max_length=40, default="")
 
     def __str__(self):
-        return self.skill
-    
-# class Contact(models.Model):
-#     Name=models.CharField(max_length=80,blank=False,default="")
-#     Email=models.EmailField(max_length=254,blank=False,default="")
-#     Subjects=models.CharField(max_length=250 ,blank=False,default="")
-#     Messages=models.TextField(max_length=2000,blank=False,default="")
+        return self.logo_name
+
+#######################################################################################################
+# CONTACT QUERY MODEL
+
+
 class MyModel(models.Model):
     Full_Name = models.CharField(max_length=200)
-    Email = models.EmailField(max_length=255, blank=False,default="")
-    Subject = models.CharField(max_length=400,default="")
-    Messages=models.TextField()
-    search_fields = ["Full_Name"]
-    
+    Email = models.EmailField(max_length=255, blank=False, default="")
+    Subject = models.CharField(max_length=400, default="")
+    Messages = models.TextField()
+
+    def __str__(self):
+        return self.Full_Name 
+
+#######################################################################################################
+# ALL WORK MODEL
+
+
 class Allwork(models.Model):
     title = models.CharField(max_length=80, blank=True, null=True)
     skill = models.TextField(max_length=330, blank=True, null=True)
     link = models.URLField(blank=True, null=True)
     image = models.ImageField(upload_to='portfolio')
     search_fields = ["title"]
+
     def __str__(self):
         return self.title
-    
+
+#######################################################################################################

@@ -1,17 +1,22 @@
 from django.contrib import admin
 from .models import *
 
-# Register your models here.
-
-
+#######################################################################################################
+# EXTRA CLASS
 class PersonalInformationAdmin(admin.ModelAdmin):
     list_display = ('name_complete', 'address')
     search_fields = ["name_complete"]
+class Myvalues(admin.ModelAdmin):
+    list_display=('Full_Name','Email','Subject','Messages')
+    search_fields=['Full_Name','Email','Subject','Messages']
 
-
-admin.site.register(PersonalInformation)
+#######################################################################################################
+# REGISTER MODELS
+admin.site.register(PersonalInformation,PersonalInformationAdmin)
 admin.site.register(About)
 admin.site.register(RecentWork)
-admin.site.register(Skills)
 admin.site.register(Allwork)
-admin.site.register(MyModel)
+admin.site.register(Skill_Language)
+admin.site.register(MyModel,Myvalues)
+
+#######################################################################################################

@@ -1,5 +1,15 @@
 {% load static %}
 <!DOCTYPE html>
+
+ <!--====="Djnago dynamic website created by Fabin ziyad.
+        Developed with Html,css,bootsrtap,javascript,python 
+        and djnago including the admin panel"
+        ##################################################
+        Github: https://github.com/fabin-ziyad
+        ##################################################
+        Linkedin: https://https://www.linkedin.com/in/fabin-ziyad-439ba7224/
+        =====-->
+
 <html lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,92 +40,84 @@
 <body>
     <header id="header" class="fixed-top ">
         <div class="container-fluid  navbur">
-
             <div class="navi">
                 <div class="col-xl-9 d-flex align-items-center lefty">
                     <h1 class="logo mr-auto"><a href="{% url 'main:main_home' %}">Fabin Ziyad</a></h1>
+                    <nav class="nav-menu d-none d-lg-block float-right">
+                        <ul>
+                          <li><a href="{% url 'main:main_home' %}">Home</a></li>
+                          <li class="active"><a href="{% url 'main:portfolio' %}">My Works</a></li>
+                          <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                                <!-- <div class="invert pl-4 " id="theme-button">
+                                <ion-icon name='contrast-outline' style="color:White"></ion-icon>
+                                </div> -->
+                        </ul>
+                    </nav>
+                       <div class="invert pl-4 " id="theme-button">
+                        <ion-icon name='contrast-outline'  class="icon-dark"></ion-icon>
+                       </div> 
+                    <button type="button" class="mobile-nav-toggle d-lg-none">
+                        <i class="icofont-navigation-menu mt-2"></i>
+                    </button> 
+                     {% comment %} <div class="changed mx-3"><i class="icofont-ui-brightness change-theme" id="theme-button"></i></div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </header>
 
-
-        
-
-
-        <nav class="nav-menu d-none d-lg-block float-right">
-            <ul>
-                <li><a href="{% url 'main:main_home' %}">Home</a></li>
-                <li class="active"><a href="{% url 'main:portfolio' %}">My Works</a></li>
-                <li><a href="{% url 'main:contact' %}">Contact</a></li>
-                <!-- <div class="invert pl-4 " id="theme-button">
-                    <ion-icon name='contrast-outline' style="color:White"></ion-icon>
-                </div> -->
-                <!--  -->
-
-
-            </ul>
-        </nav>
-    </div>
-</div>
-</div>
-
-</header>
-
-<section class="portfoilo-section">
-
-
-<div class="work">
-  <div class="container" id="work">
-      <div class="title-portfolio">
-          <h1 >My Recent Works</h1>
-      </div>
-      <div class="small-container">
-        <div class="row3 ">
-              {% for wrks in Allworks %}
-              <div class="card initial-6  w- aos-init mt-4">
-                  <img src="{{wrks.image.url}}" alt="main image">
-                  <div class="card-data col-5-info px-3 py-3">
-                      <h3 class="pb-1">{{wrks.title}}</h3>
-                      <p class="pb-1">{{wrks.skill}}</p>
-                      <button><a href="{{wrks.link}}">VISIT</a></button>
-                  </div>
-              </div>
-              {% endfor %}
-          </div>
-      </div>
-     
-  </div>
-</div>
-</section>
-
-<footer id="contact">
-  <div class="container">
-  
-          <div class="footing ">
-              <div class="row justify-content-center ">
-                  <div class="col-md-4 ">
+    <!--====="Portfolio section"=====-->
+    <section class="portfoilo-section">
+        <div class="work">
+            <div class="container" id="work">
+                <div class="title-portfolio">
+                 <h1 >My Works</h1>
+                </div>
+                <div class="small-container">
+                   <div class="row3 ">
+                     {% for wrks in Allworks %}
+                        <div class="card initial-6  w- aos-init mt-4 border border-primary">
+                           <img src="{{wrks.image.url}}" alt="main image">
+                            <div class="card-data col-5-info px-3 py-3">
+                             <h3 class="pb-1">{{wrks.title}}</h3>
+                              <p class="pb-1">{{wrks.skill}}</p>
+                             <button><a href="{{wrks.link}}">VISIT</a></button>
+                            </div>
+                        </div>
+                     {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====="Portfolio section Ends"=====-->
+   
+    <!--====="Footer section"=====-->
+    <footer id="contact">
+        <div class="container">
+            <div class="footing ">
+                <div class="row justify-content-center ">
+                    <div class="col-md-4 ">
                       <p>Designed By Fabin Ziyad</p>
-                      <p>A Full Web Developer</p>
+                      <p>Full Stack Developer</p>
                       <p id="copy ">© COPYRIGHTS FABIN ZIYAD. ALL RIGHTS RESERVED.
-                  </div>
-              </div>
-              </p>
-          </div>
-      </div>
-  </div>
-  <div class="up-arrow ">
-      <div class="arrow ">
-          <a href="# "><i class="fa fa-angle-up "></i>
-      </a>
-      </div>
-  </div>
-
-</footer>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </div>
+        <div class="up-arrow ">
+            <div class="arrow ">
+             <a href="# "><i class="fa fa-angle-up "></i>
+             </a>
+            </div>
+        </div>
+    </footer>
+    <!--====="Footer section Ends"=====-->
 
     <div id="preloader"></div>
-
     <script src="{% static 'jquery/jquery.min.js' %}"></script>
-
     <script src="{% static 'aos/aos.js' %}"></script> 
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script>
         var prevScrollpos = window.pageYOffset;
@@ -128,11 +130,10 @@
           }
           prevScrollpos = currentScrollPos;
         }
-      </script>
+    </script>
     <script src="{% static 'jquery.easing/jquery.easing.min.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </body>
 </html>
